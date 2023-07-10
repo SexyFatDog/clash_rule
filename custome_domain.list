@@ -1,2 +1,2 @@
-IP-CIDR,124.108.138.7,no-resolve
+IP-CIDR,124.108.138.7/24,no-resolve
 DOMAIN-SUFFIX,cloudflare.com
