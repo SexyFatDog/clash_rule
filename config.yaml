@@ -1,0 +1,37 @@
+port: 7890 # port of HTTP
+socks-port: 7891 # port of SOCKS5
+redir-port: 7892 # redir port for Linux and macOS
+allow-lan: false
+Proxy:
+
+- name: "sanjose"
+  type: vmess
+  server: vl.xijinpingsiquanjia.co.uk
+  port: 443
+  uuid: fadc4bc4-34b2-dc94-2da0-c941ff42aef1
+  alterId: 2
+  cipher: auto
+  udp: true
+  tls: true
+  network: ws
+  ws-path: /downplay96728
+  ws-headers:
+  	Host: v2ray.com
+
+- name: "sanjose-sd"
+  type: ss
+  server: hys.xijinpingsiquanjia.co.uk
+  port: 9677
+  cipher: chacha20-ietf-poly1305
+  password: "fadc4bc4-34b2-dc94-2da0-c941ff42aef1"
+  udp: 是否启用 UDP
+
+Proxy Group:
+
+- name: ss
+  type: select
+  proxies:
+    - sanjose
+  
+Rule:
+- GEOIP,CN,DIRECT
